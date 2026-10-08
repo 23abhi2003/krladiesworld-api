@@ -1,0 +1,21 @@
+{
+    "name":  "krladiesworld-api",
+    "version":  "1.0.0",
+    "main":  "src/index.ts",
+    "scripts":  {
+                    "dev":  "wrangler dev",
+                    "deploy":  "wrangler deploy",
+                    "db:init":  "wrangler d1 execute krladiesworld-db --file=./schema.sql",
+                    "db:seed":  "wrangler d1 execute krladiesworld-db --file=./seed.sql",
+                    "db:migrate:local":  "wrangler d1 execute krladiesworld-db --local --file=./schema.sql",
+                    "db:seed:local":  "wrangler d1 execute krladiesworld-db --local --file=./seed.sql"
+                },
+    "dependencies":  {
+                         "hono":  "^4.1.0"
+                     },
+    "devDependencies":  {
+                            "@cloudflare/workers-types":  "^4.20240329.0",
+                            "typescript":  "^5.4.3",
+                            "wrangler":  "^3.40.0"
+                        }
+}
